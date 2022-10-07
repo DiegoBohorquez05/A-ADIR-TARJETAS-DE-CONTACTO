@@ -1,6 +1,6 @@
 class Persona {
     constructor(nombre, apellido, documento) {
-        this.nomvre = nombre
+        this.nombre = nombre
         this.apellido = apellido
         this.documento = documento
     }
@@ -10,12 +10,13 @@ class Interfaz {
     añadirPersona(persona) {
         const lista = document.getElementById('personas-list')
         const elemento = document.createElement('div')
+        console.log(persona)
         elemento.innerHTML =
             `<div class="card text-center mb-4">
         <div class="card-body">
-            <strong>Nombre</strong>:nombre
-            <strong>apellido</strong>:apellido
-            <strong>Documento</strong>:documento
+            <strong>Nombre</strong>:${persona.nombre}
+            <strong>apellido</strong>:${persona.apellido}
+            <strong>Documento</strong>:${persona.documento}
             <a href="#" class="btn btn-danger" name="eliminar">ELIMINAR</a>
             </div>
         </div>`
