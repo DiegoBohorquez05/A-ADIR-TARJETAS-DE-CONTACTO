@@ -14,10 +14,10 @@ class Interfaz {
         elemento.innerHTML =
             `<div class="card text-center mb-4">
         <div class="card-body">
-            <strong>Nombre</strong>:${persona.nombre}
-            <strong>apellido</strong>:${persona.apellido}
-            <strong>Documento</strong>:${persona.documento}
-            <a href="#" class="btn btn-danger" name="eliminar">ELIMINAR</a>
+            <strong>Nombre</strong>:${persona.nombre}<br>
+            <strong>apellido</strong>:${persona.apellido}<br>
+            <strong>Documento</strong>:${persona.documento}<br>
+            <a href="#" class="btn btn-danger" id="eliminar" name="eliminar">ELIMINAR</a>
             </div>
         </div>`
 
