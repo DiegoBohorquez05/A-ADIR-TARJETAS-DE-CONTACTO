@@ -31,8 +31,20 @@ class Interfaz {
 
     eliminarPersona(elemento) {
         if (elemento.name === 'eliminar') {
-            elemento.parentElement.parentElement.remove()
+            elemento.parentElement.parentElement.parentElement.remove()
         }
+    }
+
+    mostrarmensaje(mensaje,tipo){
+        const div=document.createElement('div')
+        div.className=`alert alert-${tipo}`
+        div.appendChild(document.createTextNode(mensaje))
+        const contenedor= document.getElementsByClassName('container')
+        const app=document.getElementById('app')
+        contenedor[0].insertBefore(div,app)
+        setTimeout(function(){
+            div.remove()
+        },(2000))
     }
 }
 
@@ -50,6 +62,15 @@ document.getElementById('personas-form').addEventListener('submit', e => {
         const persona=new Persona(nombre,apellido,documento)
         const interfaz=new Interfaz
         interfaz.añadirPersona(persona)
-        alert(`Persona creada correctamente`)
+        // alert(`Persona creada correctamente`)
+        interfaz.mostrarmensaje('Contacto añadido correctamente','success')
     }
 })
+
+document.getElementById('personas-list').addEventListener('click',evento=>{
+    const interfaz=new Interfaz
+    console.log(evento.target)
+    interfaz.eliminarPersona(evento.target)
+    interfaz.mostrarmensaje('Elemento eliminado','danger')
+})
+
